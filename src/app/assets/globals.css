@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #d8d8d8;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 500px;
+  background-color: rgb(43, 43, 43);
+}
+
+@font-face {
+  font-family: "Ic";
+  src: url(ic.woff2);
+}
+
+@font-face {
+  font-family: "TWK";
+  src: url(TWKEverett-Medium-web.woff2);
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  height: 100vh;
+  background-size: 1%;
+  font-family: 'Ic', sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pp {
+  font-family: 'Inter', sans-serif;
+  -webkit-text-stroke: 0.05px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: fit-content;
+  padding-block: 1.25vw;
+}
+
+nav div svg {
+  animation: rotateOnSwitch 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.heading {
+  font-family: "TWK";
+}
+
+@keyframes rotateOnSwitch {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.bluebg {
+  /* background: linear-gradient(45deg, #f2ff00, #7050bf, #cb49f8); */
+  /* background: -webkit-linear-gradient(45deg, #f2ff00, #7050bf, #cb49f8); */
+  /* background: -moz-linear-gradient(45deg, #f2ff00, #7050bf, #cb49f8); */
+  /* background: -o-linear-gradient(45deg, #f2ff00, #7050bf, #cb49f8); */
+  /* background-image: -webkit-linear-gradient(0deg, #e8de1e 22%, #c79126 33%, #0062ea 77%); */
+  background-image: -webkit-linear-gradient(0deg, #ffeb3b 32%, #a4f250 58%, #1100ff 82%);
+  transition: all .5s ease-in-out;
+}
+
+.bluebg:hover{
+  /* color: currentColor;
+  border: 2px solid currentColor; */
+  scale: 1.2;
+}
+
+.blue {
+  /* background: rgb(14, 14, 14);
+  background: -moz-radial-gradient(circle, rgb(43, 255, 0) 0%, rgb(0, 217, 255) 100%, rgb(230, 0, 255) 100%);
+  background: -webkit-radial-gradient(circle, rgb(128, 255, 0) 0%, rgb(0, 81, 255) 100%, rgb(0, 255, 136) 100%);
+  background: radial-gradient(circle, rgb(255, 0, 217) 0%, rgb(0, 76, 255) 100%, rgba(0, 12, 255, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00f3ff", endColorstr="#000cff", GradientType=1);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; */
+  
+  color: #e8de1e;
+  background-image: -webkit-linear-gradient(0deg, #e8de1e 32%, #c79126 43%, #0062ea 77%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.hljs-comment {
+  color: hsla(0, 0%, 100%, .5)
+}
+
+.hljs-meta {
+  color: hsla(0, 0%, 100%, .6)
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e9950c
+}
+
+.hljs-doctag,
+.hljs-formula,
+.hljs-keyword,
+.hljs-literal {
+  color: #00b3ff
+}
+
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string,
+.hljs-regexp,
+.hljs-string {
+  color: #ff005d
+}
+
+.hljs-attr,
+.hljs-name,
+.hljs-number,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-pseudo,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable {
+  color: #ff0000
+}
+
+.hljs-bullet,
+.hljs-link,
+.hljs-selector-id,
+.hljs-symbol,
+.hljs-title {
+  color: #c3ff00
+}
