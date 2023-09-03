@@ -1,7 +1,7 @@
 // useless
 "use client"
 import { useToast } from "@/app/components/ui/use-toast"
-export const ToastNotification = ({ title, message, desc }) => {
+export const ToastNotification = ({ title, message, desc } : { title : string, message : string, desc : string }) => {
     const { toast } = useToast()
     return (
         <button 
