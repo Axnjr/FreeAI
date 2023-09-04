@@ -6,7 +6,7 @@ export default function ModelSpecifications({name, Modelhref, aboutModel, genral
         <div className="model_doc lg:w-3/5 m-2 px-4 lg:pl-6 h-full">
             <div>
                 <code className="flex items-center text-lg lg:text-xl font-semibold tracking-tighter">
-                    <span className='relative flex rounded-full mr-1 lg:mr-2 h-4 w-5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500'></span>
+                    <span className='relative flex rounded-full mr-1 lg:mr-2 h-4 w-5 bg-gradient-to-r from-amber-500 via-lime-300 to-blue-500'></span>
                     <a href={Modelhref}>{name}</a>
                 </code>
                 <section className="flex flex-wrap mt-1 -ml-2">

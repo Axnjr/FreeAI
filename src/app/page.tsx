@@ -8,23 +8,28 @@ const desc3 = "Summarize's the jist of any paragrph." // "A opensource large lan
 export default async function Home() {
 	return (
 		<>
-			<main className="m-auto pt-24 ">
-				<div className="text-center m-auto flex flex-col items-center justify-center w-fit mb-12 sm:h-screen md:mt-0 xl:mt-12">
-					<h1 className="leading-tighter heading text-center font-black tracking-tighter text-4xl md:text-5xl lg:text-7xl xl:text-8xl text-black dark:text-white">
+			<main className="flex flex-col items-center">
+				<div className="text-center m-auto flex pt-20 flex-col items-center 
+				justify-center w-fit mb-24 sm:min-h-screen">
+					<h1 className="leading-tighter heading text-center font-black tracking-tighter 
+					text-3xl sm:text-5xl md:text-6xl lg:text-7xl lg:mt-0 md:mt-8 mt-0 xl:text-8xl text-black dark:text-white">
 						Enable Your apps with <br />
 						<span id="two" style={{lineHeight:"1.5"}}> powerful </span>
-						<span id="thr" className="bluebg rounded-xl px-1 text-black"> AI Models</span> for free.
+						<span id="thr" className="bg-gradient-to-r from-amber-500 via-lime-300 to-blue-600 rounded-xl px-1 text-black"> AI Models</span> for free.
 					</h1>
 					<br/>
 					<h1 className="pp text-xl xl:text-xl m-auto w-10/12 sm:w-3/2 tracking-normal text-black dark:text-white text-center leading-tight mt-8">
 						Leverage opensource large language models from the big tech in one fetch.
 						Sign in for optimized response and api details or
 						<br/>
-						<Button className="heading hover:bg-transparent dark:hover:bg-black hover:text-black dark:hover:text-white border-black dark:border-white hover:border-2 mt-4">
+						<Button className="heading hover:bg-transparent dark:hover:bg-black
+						hover:text-black dark:hover:text-white border-black dark:border-white 
+						hover:border-2 mt-12 sm:mt-4">
 							<a href="#models">Get Started directly.</a>
 						</Button>
 					</h1>
 				</div>
+
 				<div className="w-screen sm:min-h-screen text-center">
 					<h1 className="heading text-4xl md:text-5xl lg:text-7xl xl:text-7xl font-black tracking-tighter mb-12">Services</h1>
 					<div id="models" className="flex flex-wrap justify-center items-center">

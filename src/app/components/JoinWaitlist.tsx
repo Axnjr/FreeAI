@@ -10,7 +10,7 @@ export default function JoinWaitlist() {
         <div className="m-auto w-11/12 md:w-1/2 text-center my-24 sm:min-h-screen flex flex-col items-center justify-center">
             <h1 className="heading text-4xl md:text-5xl lg:text-7xl xl:text-7xl font-black tracking-tighter">Join wait list</h1>
             <br/>
-            <p className="pp text-md lg:text-xl tracking-tight">
+            <p className="pp text-sm md:text-md lg:text-xl tracking-tight">
                 Ready to revolutionize your AI projects with FREEAI? Kickstart your journey and tap into
                 the power of open-source AI today! More models comming soon be notified 😶‍🌫️😆
             </p>
