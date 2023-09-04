@@ -18,7 +18,7 @@ export default function page() {
     useEffect(() => {
         if(status === "authenticated"){
             (async () => { // immediately invoked function expressions
-                let apiKeyOfUser = await (await fetch(`http://localhost:3000/api/userAPI?email=${email}`)).json()
+                let apiKeyOfUser = await (await fetch(`/api/userAPI?email=${email}`)).json()
                 setApiKey(apiKeyOfUser.data)
             })();
         }
