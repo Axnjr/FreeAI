@@ -10,7 +10,7 @@ export default function ApiUsageTable({ apiKey } : { apiKey : string} ) {
     const [message,setMessage] = useState("")
 
     async function GetRequests(apiKey : string, take? : number ,skip ?: number,returnBool ?: boolean){
-        let t = await (await fetch(`http://localhost:3000/api/getRequests?key=${apiKey}&take=${take}&skip=${skip}`)).json()
+        let t = await (await fetch(`/api/getRequests?key=${apiKey}&take=${take}&skip=${skip}`)).json()
         if(returnBool) return t
         setLoading(false)
         if(t.length < 1) setMessage(`That's it you have made total ${requests.length} requests`)
