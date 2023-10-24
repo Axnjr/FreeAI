@@ -44,9 +44,9 @@ export default function DashboardPage() {
 
     // middelware is implemented in middelware.ts file to avoid unauthenticated users
     // but still below line also does the same : ) 
-    if(status === "unauthenticated" && !testMode) router.push("/api/auth/signin")
+    // if(status === "unauthenticated") router.push("/api/auth/signin")
 
-    if (status === "authenticated" || testMode) return (
+    if(status === "unauthenticated") return (
         <>
             <h1 className="text-5xl sm:text-7xl ml-2 sm:ml-8 font-bold text-left mt-20 leading-0 tracking-tight">Welcome,
                 <span className="capitalize">{testMode ? "Test User" : user}</span>
