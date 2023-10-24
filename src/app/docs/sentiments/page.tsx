@@ -16,11 +16,20 @@ const tags = [
     ["go emotions dataset","https://huggingface.co/datasets/go_emotions"]
 ]
 
-export default function page() {
+type Props = {
+    searchParams?: {
+        test?: string;
+    };
+};
+
+export default function page(props : Props) {
+
+    const { searchParams } = props
+
     return (
         <div className="pt-12 text-left w-full min-w-screen mb-12 lg:flex">
             <ModelSpecifications aboutModel={aboutModel} Modelhref={Modelhref} genralModelName={name} name={modelName} tags={tags} query="You are a dumbo !"/>
-            <SentimentsDemo/>
+            <SentimentsDemo test={searchParams?.test}/>
         </div>
     )
 }

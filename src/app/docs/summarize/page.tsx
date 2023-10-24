@@ -16,11 +16,20 @@ const tags = [
     ["facebook","https://huggingface.co/facebook"],
 ]
 
-export default function page() {
+type Props = {
+    searchParams?: {
+        test?: string;
+    };
+};
+
+export default function page(props: Props) {
+
+    const { searchParams } = props
+
     return (
         <div className="pt-12 text-left w-full min-w-screen mb-20 lg:flex">
             <ModelSpecifications aboutModel={aboutModel} Modelhref={Modelhref} genralModelName={"summarize"} name={modelName} tags={tags} query="The Eiffel Tower is the second tallest ...."/>
-            <SummarizationDemo/>
+            <SummarizationDemo test={searchParams?.test}/>
         </div>
     )
 }

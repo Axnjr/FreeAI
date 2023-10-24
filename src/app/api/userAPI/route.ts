@@ -10,4 +10,9 @@ export async function GET( request : NextRequest ) {
     }
     // await prismaDB.apiKey.deleteMany()
     return new NextResponse("Email parameter missing !!")
+    // return new NextResponse(JSON.stringify(await prismaDB.user.create({data:{
+    //     name:"Test User",
+    //     email:"test@gmail.com",
+    //     apiKeyId:"test_API_KEY"
+    // }})))
 }

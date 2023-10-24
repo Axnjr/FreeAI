@@ -10,7 +10,7 @@ export default function ApiUsageTable({ apiKey } : { apiKey : string} ) {
     const [message,setMessage] = useState("")
 
     async function GetRequests(apiKey : string, take? : number ,skip ?: number,returnBool ?: boolean){
-        let t = await (await fetch(`http://localhost:3000/api/getRequests?key=${apiKey}&take=${take}&skip=${skip}`)).json()
+        let t = await (await fetch(`/api/getRequests?key=${apiKey}&take=${take}&skip=${skip}`)).json()
         if(returnBool) return t
         setLoading(false)
         if(t.length < 1) setMessage(`That's it you have made total ${requests.length} requests`)
@@ -19,14 +19,13 @@ export default function ApiUsageTable({ apiKey } : { apiKey : string} ) {
 
     useEffect(() => {
         (async () => {
-            // let requests: any = await (await fetch(`http://localhost:3000/api/getRequests?key=${apiKey}`)).json()
             let requests : any = await GetRequests(apiKey,10,0,true)
             setRequests([...requests])
         })();
     }, [apiKey])
 
     return (
-        <div style={{minHeight:"50vh"}} className="text-center">
+        <div style={{minHeight:"50vh"}} className="text-center mt-8">
             {
                 typeof(requests[0]) != "string" ? <Table className="bg-zinc-50 dark:bg-zinc-950 dark:text-neutral-100 text-neutral-900">
                     <TableHeader className="">
@@ -70,7 +69,12 @@ export default function ApiUsageTable({ apiKey } : { apiKey : string} ) {
             }
             <br/>
             <Button className="items-center my-8"
-            onClick={() => { GetRequests(apiKey,10,10,false); setLoading(true) }}>
+            onClick={() => { 
+                // in test mode we don't want to skip requests
+                // and if apiKey is test_API_KEY then we are in test mode
+                GetRequests(apiKey, 10, 10, false); 
+                setLoading(true) 
+            }}>
                 {message ? message : "Load more"}
                 <svg className="animate-spin ml-2 h-4 w-4 text-white dark:text-black inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     style={{ display : loading ? "block" : "none"}}>

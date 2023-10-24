@@ -1,39 +1,55 @@
 "use client"
 import { useSession } from "next-auth/react"
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Loading from "../components/Loading";
-import { Capitalize, CopyToClip } from "@/lib/utils";
+import { CopyToClip } from "@/lib/utils";
 import { ToastNotification } from "../components/Notification";
 import ApiUsageTable from "../components/ApiUsageTable";
+import { InfoCircledIcon } from "@radix-ui/react-icons";
+import { Button } from "../components/ui/button";
+import Link from "next/link";
 
-export default function page() {
+export default function DashboardPage() {
 
     const { data: session, status } = useSession()
     const user = session?.user?.name
     const email = session?.user?.email
+
     const router = useRouter()
+    const searchParams = useSearchParams()
+
     const [apiKey, setApiKey] = useState("Loading your API Key ....")
+    const [testMode, setTestMode] = useState(false)
 
     useEffect(() => {
-        if(status === "authenticated"){
+        console.log(searchParams.get("test"))
+        if (searchParams.get("test") == "true") {
+            // alert("Test mode enabled ")
+            setTestMode(true)
+            setApiKey("test_API_KEY")
+        }
+    }, [])
+
+    useEffect(() => {
+        if (status === "authenticated" && !testMode) {
             (async () => { // immediately invoked function expressions
-                let apiKeyOfUser = await (await fetch(`http://localhost:3000/api/userAPI?email=${email}`)).json()
+                let apiKeyOfUser = await (await fetch(`/api/userAPI?email=${email}`)).json()
                 setApiKey(apiKeyOfUser.data)
             })();
         }
     }, [status])
 
-    if(status === "loading") return <Loading message="Preparing Your Dashboard." /> 
+    if (status === "loading") return <Loading message="Preparing Your Dashboard." />
 
     // middelware is implemented in middelware.ts file to avoid unauthenticated users
     // but still below line also does the same : ) 
-    // if(status === "unauthenticated") router.push("/api/auth/signin")
+    if(status === "unauthenticated" && !testMode) router.push("/api/auth/signin")
 
-    if(status === "unauthenticated") return (
+    if (status === "authenticated" || testMode) return (
         <>
-            <h1 className="text-5xl sm:text-7xl ml-2 sm:ml-8 font-bold text-left mt-20 leading-0 tracking-tight">Welcome, 
-                <span className="">{Capitalize(user || "")}</span>
+            <h1 className="text-5xl sm:text-7xl ml-2 sm:ml-8 font-bold text-left mt-20 leading-0 tracking-tight">Welcome,
+                <span className="capitalize">{testMode ? "Test User" : user}</span>
             </h1>
             <div className="flex ml-2 sm:ml-8 justify-left items-center mt-4 flex-wrap">
                 <h3 className="text-xl font-semibold text-center leading-0 tracking-tight ">Your Api Key &nbsp;:&nbsp;&nbsp;</h3>
@@ -47,11 +63,27 @@ export default function page() {
                     }
                 </div>
                 <div className="sm:mx-2 my-2 border bg-black text-white dark:bg-white dark:text-black  p-2 rounded-md text-sm" onClick={CopyToClip}>
-                    <ToastNotification title="Copied" message="Copy API Key" desc="Text copied to clipboard"/>
+                    <ToastNotification title="Copied" message="Copy API Key" desc="Text copied to clipboard" />
                 </div>
             </div>
-            <h3 className="text-xl leading-0 tracking-tight ml-2 my-8 sm:m-8">Your API History :</h3>
-            <ApiUsageTable apiKey={apiKey}/>
+            <h3 className="text-xl leading-0 tracking-tight sm:m-8">Your API History :</h3>
+
+            {
+                testMode && <>
+                    <p className="flex items-center text-center w-[95%] m-auto ml-6 bg-black text-white rounded-lg p-2 justify-center
+                        font-mono text-sm dark:bg-white dark:text-black ">
+                        <InfoCircledIcon className="mx-2" />
+                        You are in test mode for developers and recruters. You can make test requests via below links 
+                    </p>
+                    <div className="m-auto flex items-center justify-center mt-6 gap-4">
+                        <Button><Link href={"/docs/sentiments?test=true"}>Sentiments</Link></Button>
+                        <Button><Link href={"/docs/chatConvo?test=true"}>Chat</Link></Button>
+                        <Button><Link href={"/docs/summarize?test=true"}>Summarize</Link></Button>
+                    </div>
+                </>
+            }
+
+            <ApiUsageTable apiKey={testMode ? "test_API_KEY" : apiKey} />
         </>
     )
 }

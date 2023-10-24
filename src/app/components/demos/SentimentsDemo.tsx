@@ -3,20 +3,27 @@ import { Input } from "@/app/components/ui/input"
 import { Button } from "@/app/components/ui/button"
 import { useState } from "react"
 
-export default function SentimentsDemo() {
+export default function SentimentsDemo({ test }: { test?: string | boolean }) {
 
     const [jsonData, setJsonData] = useState([["MODEL OUTPUT 👇"]])
-    const [input,setInput] = useState("")
-    const [loading,setLoading] = useState(false)
+    const [input, setInput] = useState("")
+    const [loading, setLoading] = useState(false)
 
     async function query(data: string) {
         setLoading(true)
-        if(data){
-            const response = await fetch(`/api/sentiments?query=${data}`);
-            const result = await response.json();
-            setJsonData([...result])
-            // return result;
+        if (data) {
+
+            try {
+                const response = await fetch(`/api/sentiments?query=${data}&test_API_KEY=${test}`);
+                const result = await response.json();
+
+                setJsonData([...result])
+            } 
+            catch (error) {
+                setJsonData([["Error occured please try after refreshing the page"]])
+            }
         }
+        
         else {
             let t = ["You need to pass a statement for computing sentiments 🥲😑!"]
             setJsonData([...[t]])

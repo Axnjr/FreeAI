@@ -2,7 +2,7 @@
 import { Button } from "@/app/components/ui/button"
 import { useState } from "react"
 
-export default function SummarizationDemo() {
+export default function SummarizationDemo({ test }: { test?: string | boolean }) {
 
     const [chatMessage, setChatMessage] = useState("")
     const [input, setInput] = useState("")
@@ -10,10 +10,19 @@ export default function SummarizationDemo() {
     async function query(data: string) {
         setChatMessage("loading")
         if (data) {
-            const response = await fetch(`/api/summarize?query=${data}`);
-            const result = await response.json();
-            setChatMessage(result[0]["summary_text"])
+
+            try {
+                const response = await fetch(`/api/summarize?query=${data}&test_API_KEY=${test}`);
+                const result = await response.json();
+
+                setChatMessage(result[0]["summary_text"])
+            } 
+            catch (error) {
+                setChatMessage("Error occured try refreshing your page please .")
+            }
+
         }
+
         else {
             let t = "You need to pass a statement for computing sentiments 🥲😑!"
             setChatMessage(t)

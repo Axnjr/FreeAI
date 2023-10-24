@@ -10,9 +10,10 @@ export default async function Home() {
 		<>
 			<main className="flex flex-col items-center">
 				<div className="text-center m-auto flex pt-20 flex-col items-center 
-				justify-center w-fit mb-24 sm:min-h-screen">
+				justify-center w-fit mb-24 sm:min-h-screen xl:min-h-fit">
 					<h1 className="leading-tighter heading text-center font-black tracking-tighter 
-					text-3xl sm:text-5xl md:text-6xl lg:text-7xl lg:mt-0 md:mt-8 mt-0 xl:text-8xl text-black dark:text-white">
+					text-3xl sm:text-5xl md:text-6xl lg:text-7xl lg:mt-6 md:mt-8 mt-0 xl:mt-12
+					 text-black dark:text-white">
 						Enable Your apps with <br />
 						<span id="two" style={{lineHeight:"1.5"}}> powerful </span>
 						<span id="thr" className="bg-gradient-to-r from-amber-500 via-lime-300 to-blue-600 rounded-xl px-1 text-black"> AI Models</span> for free.
@@ -30,8 +31,8 @@ export default async function Home() {
 					</h1>
 				</div>
 
-				<div className="w-screen sm:min-h-screen text-center">
-					<h1 className="heading text-4xl md:text-5xl lg:text-7xl xl:text-7xl font-black tracking-tighter mb-12">Services</h1>
+				<div className="w-screen sm:min-h-screen text-center xl:min-h-fit">
+					<h1 className="heading text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter mb-12">Services</h1>
 					<div id="models" className="flex flex-wrap justify-center items-center">
 						<AiCards name="Sentiments AI" desc={desc1} num={1} href="/docs/sentiments" />
 						<AiCards name="Conversation AI" desc={desc2} num={2} href="/docs/chatConvo" />
