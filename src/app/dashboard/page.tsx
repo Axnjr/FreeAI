@@ -40,13 +40,19 @@ export default function DashboardPage() {
         }
     }, [status])
 
-    if (status === "loading") return <Loading message="Preparing Your Dashboard." />
+    if (status === "loading") return (
+        <>
+            <div className="w-screen h-screen">
+                <Loading message="Preparing Your Dashboard." />
+            </div>
+        </>
+    )
 
     // middelware is implemented in middelware.ts file to avoid unauthenticated users
     // but still below line also does the same : ) 
-    // if(status === "unauthenticated") router.push("/api/auth/signin")
+    if (status === "unauthenticated") router.push("/api/auth/signin")
 
-    if(status === "unauthenticated") return (
+    if (status === "authenticated") return (
         <>
             <h1 className="text-5xl sm:text-7xl ml-2 sm:ml-8 font-bold text-left mt-20 leading-0 tracking-tight">Welcome,
                 <span className="capitalize">{testMode ? "Test User" : user}</span>
@@ -73,7 +79,7 @@ export default function DashboardPage() {
                     <p className="flex items-center text-center w-[95%] m-auto ml-6 bg-black text-white rounded-lg p-2 justify-center
                         font-mono text-sm dark:bg-white dark:text-black ">
                         <InfoCircledIcon className="mx-2" />
-                        You are in test mode for developers and recruters. You can make test requests via below links 
+                        You are in test mode for developers and recruters. You can make test requests via below links
                     </p>
                     <div className="m-auto flex items-center justify-center mt-6 gap-4">
                         <Button><Link href={"/docs/sentiments?test=true"}>Sentiments</Link></Button>

@@ -1,4 +1,4 @@
-export default function Loading({ message } : { message : string }) {
+export default function Loading({ message }: { message: string }) {
     return (
         <div className="loading-dash absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-center">
             <h1 className="text-2xl font-bold">{message}</h1>
