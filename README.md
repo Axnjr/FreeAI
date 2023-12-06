@@ -13,6 +13,8 @@
   <a>![Static Badge](https://img.shields.io/badge/Full%20Stack%20-%20?logoColor=%23000&color=%2300FFF3)</a>
   <a>![X (formerly Twitter) URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2FYC59094) </a>
   <a>![Static Badge](https://img.shields.io/badge/v.1.3%20-%20%230213FF)</a>
+  <a>![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/Axnjr/FreeAI-APIServices?logoColor=%23000&labelColor=%23F4FF00&color=%23FC9300)
+</a>
   
 </div>
 
@@ -32,6 +34,7 @@
 - 🔧 Modern Data Fetching Using tRPC & Zod
 - 💥 Lightning fast API's
 - ✨ Instant Loading States
+- 🧪 Test mode for testing the app without login & signup
 - 💻 Beautiful Landing Page
 
 # Services / Models 
