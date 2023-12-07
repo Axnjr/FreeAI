@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,7 +24,7 @@
 
 @font-face {
   font-family: "Ic";
-  src: url(ic.woff2);
+  src: url(soehne-buch.woff2);
 }
 
 @font-face {
@@ -48,8 +49,8 @@ a {
 }
 
 .pp {
-  font-family: 'Inter', sans-serif;
-  -webkit-text-stroke: 0.05px;
+  font-family: 'Ic', sans-serif;
+  /* -webkit-text-stroke: 0.05px; */
 }
 
 nav {

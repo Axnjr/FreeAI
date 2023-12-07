@@ -7,13 +7,13 @@ import { Input } from "./ui/input"
 import { ComponentProps } from "react"
 import { FeedbackOrWaitlist } from "@/lib/utils"
 
-export function JoinWaitList({...props} : ComponentProps<"button">) {   
+export function Feedback() {   // {...props} : ComponentProps<"button">
 
     return (
         <AlertDialog >
-            <AlertDialogTrigger asChild className="ml-2">
+            <AlertDialogTrigger asChild>
                 {/* @ts-ignore */}
-                <Button variant="outline"  {...props} >Feedback</Button>
+                <Button variant="ghost" className="hidden sm:flex text-sm sm:text-lg font-semibold" >Feedback</Button>
             </AlertDialogTrigger>
             <AlertDialogContent className="text-center">
                 <AlertDialogHeader>

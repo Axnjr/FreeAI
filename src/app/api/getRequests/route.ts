@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prismaDB } from "../../../../lib/prismaDb";
 
 export async function GET( request : NextRequest ) {
-    const req = request?.nextUrl?.searchParams?.get("key")?.replace(/["\\/]/g, '')
+    const req = request?.nextUrl?.searchParams?.get("apiKey")?.replace(/["\\/]/g, '')
     const skipReq = Number(request?.nextUrl?.searchParams?.get("skip")?.replace(/["\\/]/g, '')) || 0;
     const takeReq = Number(request?.nextUrl?.searchParams?.get("take")?.replace(/["\\/]/g, '')) || 10;
 
@@ -16,5 +16,9 @@ export async function GET( request : NextRequest ) {
         })
         return new NextResponse(JSON.stringify(USERS_API_REQUESTS))
     }
-    return new NextResponse(JSON.stringify( await prismaDB.apiRequest.findMany() ))
+    // return new NextResponse(JSON.stringify( await prismaDB.apiRequest.delete({
+    //     where:{
+    //         id
+    //     }
+    // }) ))
 }

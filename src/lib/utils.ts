@@ -32,3 +32,11 @@ export async function FeedbackOrWaitlist(e : FormEvent, action : "feedback" | "j
   console.log("Unable to update waitlist server is not responding | STATUS : 500")   
   }
 }
+
+export function getSiteURL(){
+	return process.env.NODE_ENV === "production"
+        ? 
+    "your-production-url/api/trpc"
+        : 
+    "http://localhost:3000/api/trpc"
+}

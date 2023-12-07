@@ -9,8 +9,11 @@ export default function ApiUsageTable({ apiKey } : { apiKey : string} ) {
     const [loading,setLoading] = useState(false);
     const [message,setMessage] = useState("")
 
-    async function GetRequests(apiKey : string, take? : number ,skip ?: number,returnBool ?: boolean){
-        let t = await (await fetch(`/api/getRequests?key=${apiKey}&take=${take}&skip=${skip}`)).json()
+    async function GetRequests(apiKey : string, take ?: number ,skip ?: number,returnBool ?: boolean){
+        let t = await (await fetch(`/api/getRequests?apiKey=${apiKey}&take=${take}&skip=${skip}`)).json()
+
+        console.log(t,apiKey)
+
         if(returnBool) return t
         setLoading(false)
         if(t.length < 1) setMessage(`That's it you have made total ${requests.length} requests`)
@@ -22,7 +25,7 @@ export default function ApiUsageTable({ apiKey } : { apiKey : string} ) {
             let requests : any = await GetRequests(apiKey,10,0,true)
             setRequests([...requests])
         })();
-    }, [apiKey])
+    }, [loading,apiKey])
 
     return (
         <div style={{minHeight:"50vh"}} className="text-center mt-8">

@@ -7,7 +7,7 @@ export default function CheckUser({ user } : { user : string }){
                 user 
                     ? 
                 <div>
-                    <Button variant="outline" className='font-semibold ml-2'><Link href="/dashboard">Dashboard</Link></Button>
+                    <Button variant="ghost" className='text-sm sm:text-lg font-semibold -ml-2 sm:ml-2'><Link href="/dashboard">Dashboard</Link></Button>
                 </div>
                     : 
                 <Button variant="default" className='hidden sm:block sm:ml-2'>

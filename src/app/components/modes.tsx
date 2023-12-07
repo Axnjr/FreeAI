@@ -1,7 +1,10 @@
 "use client";
 import { useState } from 'react'
+
 export default function Modes() {
+
     const [mode,setMode] = useState(true) // true for light mode
+    
     return (
         <>
             {

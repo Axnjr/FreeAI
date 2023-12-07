@@ -72,7 +72,7 @@ export default function DashboardPage() {
                     <ToastNotification title="Copied" message="Copy API Key" desc="Text copied to clipboard" />
                 </div>
             </div>
-            <h3 className="text-xl leading-0 tracking-tight sm:m-8">Your API History :</h3>
+            <h3 className="text-xl font-semibold leading-0 tracking-tight sm:m-8">Your API History :</h3>
 
             {
                 testMode && <>

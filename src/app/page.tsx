@@ -1,9 +1,6 @@
 import AiCards from "./components/AiCards"
 import JoinWaitlist from "./components/JoinWaitlist"
 import { Button } from "./components/ui/button"
-const desc1 = "Classify's any text into 28 sentiments labels." //"This Model trained from roberta-base on the go_emotions dataset for multi-label classification. It is a opens source model from hugging face AI Community, which can classify a text to 28 labels."
-const desc2 = "A large language model by facebook to chat with." // "A opensource model developed by facebook which is designed to simulate human-like connumations with users. It uses natural language processing (NLP) and complex machine learning algorithms to genrate relavnt responses."
-const desc3 = "Summarize's the jist of any paragrph." // "A opensource large language model developed by facebook which is fine tuned and trained on CNN daily mails, , a large collection of text-summary pairs. It can summarize any big paragraphs in short."
 
 export default async function Home() {
 	return (
@@ -32,11 +29,9 @@ export default async function Home() {
 				</div>
 
 				<div className="w-screen sm:min-h-screen text-center xl:min-h-fit">
-					<h1 className="heading text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter mb-12">Services</h1>
+					<h1 className="heading text-4xl md:text-5xl lg:text-7xl font-black tracking-tight mt-12 mb-24">All Models</h1>
 					<div id="models" className="flex flex-wrap justify-center items-center">
-						<AiCards name="Sentiments AI" desc={desc1} num={1} href="/docs/sentiments" />
-						<AiCards name="Conversation AI" desc={desc2} num={2} href="/docs/chatConvo" />
-						<AiCards name="Summarization AI" desc={desc3} num={3} href="/docs/summarize" />
+						<AiCards/>
 					</div>
 				</div>
 				<JoinWaitlist/>

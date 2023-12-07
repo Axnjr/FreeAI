@@ -4,7 +4,7 @@ import { Toaster } from "@/app/components/ui/toaster"
 import Navbar from './components/Navbar'
 
 export const metadata = {
-	title: "FREEAI | Home",
+	title: "FreeAI. 💥",
 	description: `
 		Easily enable your apps with powerfull Artificial intelligent models for free 100%. 
 		Leverage opensource large language models from the big tech companies in one fetch.
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 							<a href='mailto:yakshitchhipa@gmail.com'><svg className="w-4 h-4 m-2" xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" fill="currentColor" /></svg></a>
 							<a href='https://www.linkedin.com/in/yakshit/'><svg className="w-4 h-4 m-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill="currentColor" /></svg></a>
 						</div>
-						<p className='pp text-xs sm:text-sm tracking-tight text-center m-2'>© 2023 FREEAI - Made with devotion by <a href='http://axn.vercel.app'> Yakshit Chhipa (axn)</a></p>
+						<p className='text-xs sm:text-sm tracking-tight text-center m-2'>© 2023 FREEAI - Made with devotion by <a href='http://axn.vercel.app'> Yakshit Chhipa (axn)</a></p>
 					</footer>
 					<Toaster />
 				</body>
