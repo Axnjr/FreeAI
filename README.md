@@ -9,6 +9,7 @@
   
   <a>![Static Badge](https://img.shields.io/badge/AI-8A28E2)</a> 
   <a>![Static Badge](https://img.shields.io/badge/Free%20API's%20-%201A18A0)</a> 
+  <a>![Static Badge](https://img.shields.io/badge/OpenSource%20-%20%23fff?logoColor=%23fff&labelColor=%23fff&color=%23fff)</a>
   <a>![Static Badge](https://img.shields.io/badge/Hugging%20Face%20-%20%20%23FF00FF)</a>
   <a>![Static Badge](https://img.shields.io/badge/Full%20Stack%20-%20?logoColor=%23000&color=%2300FFF3)</a>
   <a>![X (formerly Twitter) URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2FYC59094) </a>
@@ -38,8 +39,47 @@
 - 💻 Beautiful Landing Page
 
 # Services / Models 
-  1) Sentiemnts AI
-  2) Chat conversation AI
-  3) Text summarization AI
 
-### Consider giving this repository a star 🙏🤗
+ 1) 👩‍💻 Email Writter
+ 2) 🌩️ Code Generator
+ 3) 🧐 Grammer Corrector
+ 4) 🔗 Post Creator
+ 5) 🎯 Bulletize
+ 6) 🧑‍🍳 ChefGPT
+ 7) 🙈 Sentiments
+ 8) 📜 Scriptter
+ 9) 🤓 StoryTeller
+
+# Contributions
+
+Your issues and pull requests could make this project more better, all are encouraged and valued. Below are major contributions you could make:
+
+> - Adding new models or services.
+> - Improving code quality.
+> - Identifying and removing new bugs.
+> - Upgrading to newer versions of next.js or other dependencies.
+> - UI / UX improvemnts
+> - Better documentations
+> - Logo and other designing stuff
+> - Etc ...
+
+> And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
+> - Sponser so that the project can get a domain name, it would be the biggest contribution 😂
+> - Star the project
+> - Tweet about it
+> - Refer this project in your project's readme
+> - Mention the project at local meetups and tell your friends/colleagues
+
+If you are a beginner to git consider going through this <a href="https://github.com/firstcontributions/first-contributions/blob/main/README.md"> First_Contribution.md </a> before getting started Btw I'm a beginner as well to github contributions 😅. When contributing to this repository, please first discuss the change you wish to make via issue, email : yakshitchhipa@gmail.com. Thanks for taking the time to contribute! ❤️
+
+# Installation & Usage
+
+Fork this repo and then download or clone it on your local / personal computer. Then run bellow commands in the terminal:
+```properties
+npm i
+```
+```properties
+npm run dev
+```
+
+#### Consider giving this repository a star 🙏🤗
