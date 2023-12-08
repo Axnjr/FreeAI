@@ -2,9 +2,10 @@ import './assets/globals.css'
 import AuthenticationProvider from './AuthProvider'
 import { Toaster } from "@/app/components/ui/toaster"
 import Navbar from './components/Navbar'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
-	title: "FreeAI. 💥",
+	title: "FreeAI | v.2.0",
 	description: `
 		Easily enable your apps with powerfull Artificial intelligent models for free 100%. 
 		Leverage opensource large language models from the big tech companies in one fetch.
@@ -17,6 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
+			<SpeedInsights/>
 			<AuthenticationProvider>
 				<body suppressHydrationWarning={true} style={{ paddingTop: "2rem" }} className='relative bg-white/75 dark:bg-black text-black dark:text-white'>
 					<Navbar />
