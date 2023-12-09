@@ -6,10 +6,10 @@ export default async function Home() {
 	return (
 		<>
 			<main className="flex flex-col items-center">
-				<div className="text-center m-auto flex pt-20 flex-col items-center 
-				justify-center w-fit mb-24 sm:min-h-screen xl:min-h-fit">
+				<div className="text-center m-auto flex sm:pt-32 lg:pt-20 flex-col items-center 
+				justify-center w-fit mb-20 xl:min-h-fit">
 					<h1 className="leading-tighter heading text-center font-black tracking-tighter 
-					text-3xl sm:text-5xl md:text-6xl lg:text-7xl lg:mt-6 md:mt-8 mt-0 xl:mt-12
+					text-3xl sm:text-5xl md:text-6xl lg:text-7xl lg:mt-6 mt-20 xl:mt-12
 					 text-black dark:text-white">
 						Enable Your apps with <br />
 						<span id="two" style={{lineHeight:"1.5"}}> powerful </span>

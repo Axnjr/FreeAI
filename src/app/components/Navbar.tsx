@@ -6,6 +6,7 @@ import Profile from "./Profile"
 import { useSession, signOut, signIn } from "next-auth/react"
 import { Feedback } from "./Feedback";
 import GitHubButton from 'react-github-btn'
+import { TwitterLogoIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export default function Navbar() {
     
@@ -29,10 +30,13 @@ export default function Navbar() {
                     <Modes />
                 </div>
                 <div style={{ margin: "2px" }} className='rounded hover:bg-neutral-200 dark:hover:bg-neutral-700 '>
-                    <Profile user={user} email={email} signOut={signOut} signIn={signIn} status={status} />
+                    <a href='https://twitter.com/YC59094'><TwitterLogoIcon className='w-9 h-9 p-2'/></a>
                 </div>
-                <div className="mt-2 ml-2">
-                    <GitHubButton href="https://github.com/Axnjr/FreeAI-APIServices" data-color-scheme="no-preference: light_high_contrast; light: dark_dimmed; dark: dark_high_contrast;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star Axnjr/FreeAI-APIServices on GitHub">Star</GitHubButton>
+                <div style={{ margin: "2px" }} className='rounded hover:bg-neutral-200 dark:hover:bg-neutral-700 '>
+                    <a href='https://github.com/Axnjr/FreeAI-APIServices'><GitHubLogoIcon className='w-9 h-9 p-2'/></a>
+                </div>
+                <div style={{ margin: "2px" }} className='rounded hover:bg-neutral-200 dark:hover:bg-neutral-700 '>
+                    <Profile user={user} email={email} signOut={signOut} signIn={signIn} status={status} />
                 </div>
             </div>
         </nav>
