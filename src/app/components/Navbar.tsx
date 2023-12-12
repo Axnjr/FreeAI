@@ -33,7 +33,7 @@ export default function Navbar() {
                     <a href='https://twitter.com/YC59094'><TwitterLogoIcon className='w-9 h-9 p-2'/></a>
                 </div>
                 <div style={{ margin: "2px" }} className='rounded hover:bg-neutral-200 dark:hover:bg-neutral-700 '>
-                    <a href='https://github.com/Axnjr/FreeAI-APIServices'><GitHubLogoIcon className='w-9 h-9 p-2'/></a>
+                    <a href='https://github.com/Axnjr/FreeAI'><GitHubLogoIcon className='w-9 h-9 p-2'/></a>
                 </div>
                 <div style={{ margin: "2px" }} className='rounded hover:bg-neutral-200 dark:hover:bg-neutral-700 '>
                     <Profile user={user} email={email} signOut={signOut} signIn={signIn} status={status} />
