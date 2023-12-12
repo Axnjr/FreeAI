@@ -63,7 +63,7 @@ Your issues and pull requests could make this project more better, all are encou
 > - Logo and other designing stuff
 > - Etc ...
 
-> And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
+And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
 > - Sponser so that the project can get a domain name, it would be the biggest contribution 😂
 > - Star the project
 > - Tweet about it
