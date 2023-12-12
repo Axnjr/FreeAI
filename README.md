@@ -40,14 +40,14 @@
 
 # Services / Models 
 
- 1) 👩‍💻 Email Writter
+ 1) 👩‍💻 Email Writer
  2) 🌩️ Code Generator
- 3) 🧐 Grammer Corrector
+ 3) 🧐 Grammar Corrector
  4) 🔗 Post Creator
  5) 🎯 Bulletize
  6) 🧑‍🍳 ChefGPT
  7) 🙈 Sentiments
- 8) 📜 Scriptter
+ 8) 📜 Scripter
  9) 🤓 StoryTeller
 
 # Contributions
