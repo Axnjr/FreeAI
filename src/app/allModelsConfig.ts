@@ -8,14 +8,14 @@ export interface modelConfigType {
 }
 
 export const allModelNames : string[] = [
-    "EmailWritter",
+    "EmailWriter",
     "CodeGenerator",
-    "GrammerCorrector",
+    "GrammarCorrector",
     "PostCreator",
     "Bulletize",
     "ChefGPT",
     "Sentiments",
-    "Scriptter",
+    "Scripter",
     "StoryTeller"
 ]
 
