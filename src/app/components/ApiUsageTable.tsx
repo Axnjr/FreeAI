@@ -7,17 +7,21 @@ export default function ApiUsageTable({ apiKey } : { apiKey : string} ) {
 
     const [requests, setRequests]: any = useState(["Loading your API usage history ..."])
     const [loading,setLoading] = useState(false);
-    const [message,setMessage] = useState("")
+    const [loadMore,setLoadMore] = useState(false);
+    const [disabled,setDisabled] = useState(false)
 
     async function GetRequests(apiKey : string, take ?: number ,skip ?: number,returnBool ?: boolean){
         let t = await (await fetch(`/api/getRequests?apiKey=${apiKey}&take=${take}&skip=${skip}`)).json()
+        setLoadMore(false)
 
-        console.log(t,apiKey)
-
+        // this is to return requests to the useEffect
         if(returnBool) return t
-        setLoading(false)
-        if(t.length < 1) setMessage(`That's it you have made total ${requests.length} requests`)
-        else setRequests([...t])
+        
+        if(t.length < 10) { 
+            setDisabled(true) 
+        }
+
+        setRequests((prev: any) => [...prev,...t])
     }
 
     useEffect(() => {
@@ -72,15 +76,16 @@ export default function ApiUsageTable({ apiKey } : { apiKey : string} ) {
             }
             <br/>
             <Button className="items-center my-8"
+            disabled={disabled}
             onClick={() => { 
                 // in test mode we don't want to skip requests
                 // and if apiKey is test_API_KEY then we are in test mode
-                GetRequests(apiKey, 10, 10, false); 
-                setLoading(true) 
+                GetRequests(apiKey, 10, requests.length, false); 
+                setLoadMore(true) 
             }}>
-                {message ? message : "Load more"}
+                Load more
                 <svg className="animate-spin ml-2 h-4 w-4 text-white dark:text-black inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    style={{ display : loading ? "block" : "none"}}>
+                    style={{ display : loadMore ? "block" : "none"}}>
                     <circle className="opacity-50" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3"></circle>
                     <path className="opacity-100" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>

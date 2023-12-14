@@ -9,6 +9,7 @@ import ApiUsageTable from "../components/ApiUsageTable";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { Button } from "../components/ui/button";
 import Link from "next/link";
+import { allModelNames } from "../allModelsConfig";
 
 export default function DashboardPage() {
 
@@ -81,10 +82,12 @@ export default function DashboardPage() {
                         <InfoCircledIcon className="mx-2" />
                         You are in test mode for developers and recruters. You can make test requests via below links
                     </p>
-                    <div className="m-auto flex items-center justify-center mt-6 gap-4">
-                        <Button><Link href={"/docs/sentiments?test=true"}>Sentiments</Link></Button>
-                        <Button><Link href={"/docs/chatConvo?test=true"}>Chat</Link></Button>
-                        <Button><Link href={"/docs/summarize?test=true"}>Summarize</Link></Button>
+                    <div className="m-auto flex flex-wrap items-center justify-center mt-6 gap-4">
+                        {
+                            allModelNames.map((model,id) => {
+                                return <Button key={id}><Link href={`/docs/${model}?test=true`}>{model}</Link></Button>
+                            })
+                        }
                     </div>
                 </>
             }

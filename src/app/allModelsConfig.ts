@@ -9,6 +9,7 @@ export interface modelConfigType {
 
 export const allModelNames : string[] = [
     "EmailWritter",
+    "ChitChat",
     "CodeGenerator",
     "GrammerCorrector",
     "PostCreator",
@@ -25,6 +26,14 @@ export const modelConfigurations : modelConfigType[] = [
         description:"Generates an email based on a given topic",
         context:"Given a topic, write emails in a concise, professional manner",
         sampleQuery:"Request for a one week long vaccation from 2nd december to manager",
+        tags: ["Text Generation", "English", "LLM"],
+        img: ""
+    },
+    {
+        name:"ChitChat",
+        description:"A casual chat bot.",
+        context:"Based on a given topic or statement chat casually or in a funny way.",
+        sampleQuery:"Hi, how's life going these days ?",
         tags: ["Text Generation", "English", "LLM"],
         img: ""
     },

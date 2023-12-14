@@ -17,11 +17,13 @@ export async function GET(request: NextRequest, { params }: { params: { model: s
     }
 
     const query = request?.nextUrl?.searchParams?.get("query")?.replace(/["\\/]/g, '')
-    const apiKey = request?.nextUrl?.searchParams?.get("apiKey")?.replace(/["\\/]/g, '')
+    const apiKey = request?.nextUrl?.searchParams?.get("key")?.replace(/["\\/]/g, '')
     const test = request?.nextUrl?.searchParams?.get("test")?.replace(/["\\/]/g, '')
 
-    if (test == "true" && query) { // for test users
+    // console.log(`[QUERY:${query},APIKEY:${apiKey},TEST:${test}]`)
 
+    if (test == "true" && query) { // for test users
+        // console.log("[TEST USER ARRIVED]")
         const startTime = performance.now();
         const endTime = performance.now();
         const res = await modelResponse(query, model[0].context)
@@ -30,11 +32,11 @@ export async function GET(request: NextRequest, { params }: { params: { model: s
             data: {
                 userId: `test_API_KEY`,
                 status: 200,
-                responseTime: `${endTime - startTime}`.slice(0, 5),
+                responseTime: `${endTime - startTime}`.slice(0, 15),
                 params: query,
                 aiModelUsed: model[0].name,
                 userStatus: "test user",
-                result: res.content
+                result: res.content.slice(0,75)
             }
         })
 
@@ -42,10 +44,22 @@ export async function GET(request: NextRequest, { params }: { params: { model: s
     }
 
     if (query && !apiKey) { // for users without apiKey
-        return new NextResponse(JSON.stringify(await modelResponse(query, model[0].context)))
+        // console.log("[USER WITHOUT API KEY ARRIVED]")
+        let res = await modelResponse(query, model[0].context)
+        // try {
+        //     res = await modelResponse(query, model[0].context)
+        // } catch (error) {
+        //     res = {
+        //         Error:"Something went wrong !",
+        //         code:"500"
+        //     }
+        // }
+        return new NextResponse(JSON.stringify(res))
     }
 
     if (query && apiKey) { // for users with apiKey
+
+        // console.log("[USER WITH API KEY ARRIVED]")
 
         let userSTATUS;
         const
@@ -62,11 +76,11 @@ export async function GET(request: NextRequest, { params }: { params: { model: s
             data: {
                 userId: `${u?.id}`,
                 status: 200,
-                responseTime: `${endTime - startTime}`.slice(0, 5),
+                responseTime: `${endTime - startTime}`.slice(0, 15),
                 params: query,
                 aiModelUsed: model[0].name,
                 userStatus: userSTATUS,
-                result: res.content
+                result: res.content.slice(0,75)
             }
         })
 

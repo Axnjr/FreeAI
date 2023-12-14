@@ -31,13 +31,13 @@ export default function ModelSpecifications({ config }: { config: modelConfigTyp
                         <span className="hljs-attribute">Base URL:</span><span className="hljs-formula"> https://freeaiapi.vercel.app/api/</span>
                     </code><br />
                     However, if you want to see your API history and get optimized server response while traffic you can
-                    <Link href={"/api/auth/signin"} className="text-blue-500 underline"> sign in </Link>to get a APIKEY and pass it as a last parameter (APIKEY).
+                    <Link href={"/api/auth/signin"} className="text-blue-500 underline"> sign in </Link>to get a APIKEY and pass it as a last parameter (key).
                     <br />
                     <br />
                     <code className="w-full block whitespace-nowrap bg-zinc-950 p-2 text-neutral-400 rounded-lg border border-neutral-800 overflow-x-auto">
                         <span className="hljs-attribute">URL : </span><span className="hljs-formula">BASEURL + { config.name } +
                             ?query="<span className="hljs-link">{config.sampleQuery}</span>
-                            "&apikey="<span className="hljs-link">KEY(optional)</span>"</span><br />
+                            "&key="<span className="hljs-link">KEY(optional)</span>"</span><br />
                     </code>
                 </p>
             </section>

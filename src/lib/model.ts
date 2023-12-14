@@ -37,14 +37,5 @@ export async function modelResponse(input: string, context ?: string) {
     catch (error) {
         var result: any = "Model took too long to load, try again sorry!"
     }
-  
-    console.log("Model Output :",result)
-
-    // await new Promise<void>((resolve) => {
-    //     setTimeout(() => {
-    //         resolve()
-    //     }, 1000)
-    // })
-  
     return result;
 }

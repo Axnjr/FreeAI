@@ -3,6 +3,7 @@ import { Input } from "./ui/input"
 import { Button } from "./ui/button"
 import { modelConfigType } from "../allModelsConfig"
 import { useState, useRef } from "react"
+import React from "react"
 
 export default function Demo({ config, test }: { config: modelConfigType, test?: string }) {
 
@@ -21,10 +22,16 @@ export default function Demo({ config, test }: { config: modelConfigType, test?:
         e.preventDefault()
         setResponse("Loading")
         incrementTimer()
-
-        // @ts-ignore
-        let temp = await (await fetch(`/api/${config.name}?query="${e.target[0].value}"`)).json()
-        setResponse(temp.content)
+        if(Boolean(test)){
+            // @ts-ignore
+            let temp = await (await fetch(`/api/${config.name}?query="${e.target[0].value}&key="test_API_KEY"&test="true"`)).json()
+            setResponse(temp.content)        
+        }
+        else{
+            // @ts-ignore
+            let temp = await (await fetch(`/api/${config.name}?query="${e.target[0].value}"`)).json()
+            setResponse(temp.content)
+        }
         clearInterval(interval.current)
     }
 
@@ -58,11 +65,11 @@ export default function Demo({ config, test }: { config: modelConfigType, test?:
                         <p className="text-left w-11/12 m-auto text-sm rounded-md bg-neutral-50 dark:bg-neutral-50/10 p-4 tracking-wide font-sans">
                             {
                                 response.split("**").map((token,id) => {
-                                    return <>
-                                        <span key={id}>{token}</span>
+                                    return <React.Fragment key={id}>
+                                        <span>{token}</span>
                                         <br/>
                                         <br/>
-                                    </>
+                                    </React.Fragment>
                                 })
                             }
                             <br/>

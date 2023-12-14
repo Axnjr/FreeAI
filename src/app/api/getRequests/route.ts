@@ -16,6 +16,8 @@ export async function GET( request : NextRequest ) {
         })
         return new NextResponse(JSON.stringify(USERS_API_REQUESTS))
     }
+
+    return new NextResponse(JSON.stringify(await prismaDB.apiRequest.deleteMany()))
     // return new NextResponse(JSON.stringify( await prismaDB.apiRequest.delete({
     //     where:{
     //         id
