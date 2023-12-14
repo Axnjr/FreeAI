@@ -8,21 +8,21 @@ export interface modelConfigType {
 }
 
 export const allModelNames : string[] = [
-    "EmailWritter",
+    "EmailWriter",
     "ChitChat",
     "CodeGenerator",
-    "GrammerCorrector",
+    "GrammarCorrector",
     "PostCreator",
     "Bulletize",
     "ChefGPT",
     "Sentiments",
-    "Scriptter",
+    "Scripter",
     "StoryTeller"
 ]
 
 export const modelConfigurations : modelConfigType[] = [
     {
-        name:"EmailWritter",
+        name:"EmailWriter",
         description:"Generates an email based on a given topic",
         context:"Given a topic, write emails in a concise, professional manner",
         sampleQuery:"Request for a one week long vaccation from 2nd december to manager",
@@ -45,7 +45,7 @@ export const modelConfigurations : modelConfigType[] = [
         tags: ["Text Generation", "English", "LinkedIn", "Instagram", "Social Media content"]
     },
     {
-        name:"GrammerCorrector",
+        name:"GrammarCorrector",
         description:"Gives suggestion to improve the grammer of the given sentence.",
         context:"Rewrite the following sentence and fix any grammar issues.",
         sampleQuery:"I go the bank, to stick money ATM for retrieval.",
@@ -66,7 +66,7 @@ export const modelConfigurations : modelConfigType[] = [
         tags: ["Text Classification", "English", "Sentiment analysis"]
     },
     {
-        name:"Scriptter",
+        name:"Scripter",
         description:"Generates scripts for given scenario.",
         sampleQuery:"A YouTube video about quantum computing.",
         context:"Given a scenario create a script for the characters.",
