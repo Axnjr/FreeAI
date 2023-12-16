@@ -41,14 +41,15 @@
 # Services / Models 
 
  1) 👩‍💻 Email Writer
- 2) 🌩️ Code Generator
- 3) 🧐 Grammar Corrector
- 4) 🔗 Post Creator
- 5) 🎯 Bulletize
- 6) 🧑‍🍳 ChefGPT
- 7) 🙈 Sentiments
- 8) 📜 Scripter
- 9) 🤓 StoryTeller
+ 2) 🗨️ Chit Chat
+ 3) 🌩️ Code Generator
+ 4) 🧐 Grammar Corrector
+ 5) 🔗 Post Creator
+ 6) 🎯 Bulletize
+ 7) 🧑‍🍳 ChefGPT
+ 8) 🙈 Sentiments
+ 9) 📜 Scripter
+ 10) 🤓 StoryTeller
 
 # Contributions
 
