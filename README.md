@@ -32,7 +32,6 @@
 - 🌩️ Prisma as ORM
 - 📅 PlanetScale (MySQL) databse
 - ✅ 100% written in TypeScript
-- 🔧 Modern Data Fetching Using tRPC & Zod
 - 💥 Lightning fast API's
 - ✨ Instant Loading States
 - 🧪 Test mode for testing the app without login & signup
