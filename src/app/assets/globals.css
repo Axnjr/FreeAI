@@ -38,7 +38,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   height: 100vh;
-  background-size: 1%;
   font-family: 'Ic', sans-serif;
   scroll-behavior: smooth;
 }
@@ -49,7 +48,7 @@ a {
 }
 
 .pp {
-  font-family: 'Ic', sans-serif;
+  /* font-family: 'Ic', sans-serif; */
   /* -webkit-text-stroke: 0.05px; */
 }
 
@@ -68,7 +67,7 @@ nav div svg {
 }
 
 .heading {
-  font-family: "TWK";
+  font-family: "Ic";
 }
 
 @keyframes rotateOnSwitch {

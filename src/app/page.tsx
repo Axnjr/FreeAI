@@ -8,15 +8,18 @@ export default async function Home() {
 			<main className="flex flex-col items-center">
 				<div className="text-center m-auto flex sm:pt-32 lg:pt-20 flex-col items-center 
 				justify-center w-fit mb-20 xl:min-h-fit">
-					<h1 className="leading-tighter heading text-center font-black tracking-tighter 
-					text-3xl sm:text-5xl md:text-6xl lg:text-7xl lg:mt-6 mt-20 xl:mt-12
+					<h1 className="leading-tighter heading text-center font-black tracking-tight 
+					text-3xl sm:text-5xl md:text-6xl lg:text-6xl lg:mt-6 mt-20 xl:mt-12
 					 text-black dark:text-white">
 						Enable Your apps with <br />
 						<span id="two" style={{lineHeight:"1.5"}}> powerful </span>
-						<span id="thr" className="bg-gradient-to-r from-amber-500 via-lime-300 to-blue-600 rounded-xl px-1 text-black"> AI Models</span> for free.
+						<span id="thr" 
+						// className="bg-gradient-to-r from-amber-500 via-lime-300 to-blue-600 rounded-xl px-1 text-black"
+						> 
+						AI Models</span> for free.
 					</h1>
 					<br/>
-					<h1 className="pp text-xl xl:text-xl m-auto w-10/12 sm:w-3/2 tracking-normal text-black dark:text-white text-center leading-tight mt-8">
+					<h1 className="pp text-xl xl:text-lg m-auto w-8/12 sm:w-3/2 tracking-normal text-black dark:text-white text-center leading-tight mt-8">
 						Leverage opensource large language models from the big tech in one fetch.
 						Sign in for optimized response and api details or
 						<br/>

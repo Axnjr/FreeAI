@@ -13,7 +13,7 @@ export function Feedback() {   // {...props} : ComponentProps<"button">
         <AlertDialog >
             <AlertDialogTrigger asChild>
                 {/* @ts-ignore */}
-                <Button variant="ghost" className="hidden sm:flex text-sm sm:text-lg font-semibold" >Feedback</Button>
+                <Button variant="outline" className="hidden sm:flex text-sm sm:text-lg font-medium" >Feedback</Button>
             </AlertDialogTrigger>
             <AlertDialogContent className="text-center">
                 <AlertDialogHeader>
