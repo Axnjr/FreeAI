@@ -30,7 +30,7 @@ export default async function Home() {
 						</Button>
 						<Button variant="outline" className="mx-2 border-black dark:border-white 
 						hover:border-2 mt-2">
-							<a href="#models">Give it a Star</a>
+							<a href="https://github.com/Axnjr/FreeAI">Give it a Star</a>
 						</Button>
 					</h1>
 				</div>
