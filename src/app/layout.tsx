@@ -74,7 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 							<a href='http://axn.vercel.app'> Yakshit Chhipa (axn)</a>
 						</div>
 					</footer> */}
-					<div className='py-12 text-left w-full text-sm sm:text-base h-12 border-t 
+					<div className='py-24 text-left w-full text-sm sm:text-base h-12 border-t 
 				flex flex-col gap-6 md:flex-row items-start md:items-center justify-center md:justify-between
 				md:px-12 px-6 dark:border-neutral-800'>
 						<span>@2024 FreeAI Built with devotion by <a className="underline" href="https://twitter.com/axnjrno1"> Axn</a>. Source code on <a className="underline" href="https://github.com/Axnjr/Blazze-Home">Github</a>.</span>
